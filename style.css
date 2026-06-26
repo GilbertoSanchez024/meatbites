@@ -610,3 +610,94 @@ footer p{
         height: 280px; /* Reducimos un poco la altura en pantallas chicas */
     }
 }
+
+/* ===================== */
+/* SECCIÓN NOSOTROS (MISION, VISION, VALORES) */
+/* ===================== */
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 40px 0 60px;
+}
+
+.mv-box {
+    background: var(--card-bg, #ffffff);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid #eeeeee;
+}
+
+.mv-box.highlighted {
+    background: #111111;
+    border-color: #111111;
+}
+
+.mv-box.highlighted h2 {
+    color: #ffffff;
+}
+
+.mv-box.highlighted p {
+    color: #cccccc;
+}
+
+.valores-section {
+    margin-top: 60px;
+}
+
+.valores-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #111111;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.valor-card {
+    background: var(--card-bg, #ffffff);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+    border-left: 4px solid #d92323; /* Detalle de línea roja de la marca */
+    transition: .3s;
+}
+
+.valor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+}
+
+.valor-card h3 {
+    font-size: 1.3rem;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+.valor-card p {
+    font-size: 0.95rem;
+    color: #666666;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* El último valor se estira para balancear el diseño */
+.valor-card.full-width {
+    grid-column: span 2;
+}
+
+/* Ajustes para celulares */
+@media(max-width: 768px) {
+    .mv-grid, .valores-grid {
+        grid-template-columns: 1fr;
+    }
+    .valor-card.full-width {
+        grid-column: span 1;
+    }
+}
